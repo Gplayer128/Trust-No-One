@@ -17,5 +17,12 @@ mesh = SubResource("CapsuleMesh_sxovr")
 shape = SubResource("ConvexPolygonShape3D_yp4wr")
 
 [node name="Head" type="Node3D" parent="." unique_id=1765635740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5892082, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=495085067]
+
+[node name="flashlight" type="SpotLight3D" parent="." unique_id=230105483]
+spot_range = 50.0
+
+[node name="rock_spawn" type="Marker3D" parent="." unique_id=873825336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41795182, 0.18733007, -0.5)
