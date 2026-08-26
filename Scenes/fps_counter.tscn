@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3af4ljxk8opj"]
+
+[ext_resource type="Script" uid="uid://cymnag3gcip76" path="res://Scripts/canvas_layer.gd" id="1_5oaki"]
+
+[node name="Fps counter" type="CanvasLayer" unique_id=2036105212]
+script = ExtResource("1_5oaki")
+
+[node name="Label" type="Label" parent="." unique_id=1563600358]
+anchors_preset = -1
+anchor_right = 0.061000004
+anchor_bottom = 0.039
+offset_right = 0.8799896
+offset_bottom = -0.12000275

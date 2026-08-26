@@ -1,4 +1,6 @@
 [gd_scene format=3 uid="uid://botkhv2kqvrls"]
 
-[node name="Ping_Effect" type="SpotLight3D" unique_id=2123769061]
-spot_angle = 30.0
+[ext_resource type="Script" uid="uid://bnhqngk4frgy" path="res://Scripts/Ping_effect.gd" id="1_p4j6s"]
+
+[node name="Ping_Effect" type="OmniLight3D" unique_id=1397454488]
+script = ExtResource("1_p4j6s")
