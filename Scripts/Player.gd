@@ -79,6 +79,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	headbob_enab = Global.headbob_enab
+	
 	update_flashlight(delta)
 	update_rotations(delta)
 	

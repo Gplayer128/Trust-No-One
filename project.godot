@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Trust no one"
-run/main_scene="uid://bq0c452ljec6u"
+run/main_scene="uid://k1os70wtsjta"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://bqwjfjm0jdu1q"
 
 [display]
 

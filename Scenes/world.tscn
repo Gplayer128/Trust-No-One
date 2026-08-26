@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bq0c452ljec6u"]
 
 [ext_resource type="PackedScene" uid="uid://cdkjpupyadybg" path="res://Scenes/player.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://cx3tn16buwrcd" path="res://Scenes/pause_menu.tscn" id="2_go701"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,8 +27,6 @@ albedo_color = Color(0, 0.5647059, 0, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a02cp"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sxovr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sxovr"]
 
@@ -90,11 +89,6 @@ mesh = SubResource("BoxMesh_ect8u")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D/StaticBody3D" unique_id=1030952399 groups=["box"]]
 shape = SubResource("ConvexPolygonShape3D_a02cp")
 
-[node name="Area3D" type="Area3D" parent="Objects/Walls/CSGBox3D" unique_id=1645455850 groups=["box"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D/Area3D" unique_id=1598863339]
-shape = SubResource("BoxShape3D_sxovr")
-
 [node name="CSGBox3D2" type="MeshInstance3D" parent="Objects/Walls" unique_id=235933460 groups=["box"]]
 transform = Transform3D(-4.371139e-08, 0, 31.322617, 0, 2.8109741, 0, -1, 0, -1.369155e-06, -0.7697625, 0.90548706, -15.312732)
 mesh = SubResource("BoxMesh_sxovr")
@@ -103,11 +97,6 @@ mesh = SubResource("BoxMesh_sxovr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D2/StaticBody3D" unique_id=548430880 groups=["box"]]
 shape = SubResource("ConvexPolygonShape3D_fo5ed")
-
-[node name="Area3D" type="Area3D" parent="Objects/Walls/CSGBox3D2" unique_id=226352639 groups=["box"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D2/Area3D" unique_id=1361265572]
-shape = SubResource("BoxShape3D_sxovr")
 
 [node name="CSGBox3D3" type="MeshInstance3D" parent="Objects/Walls" unique_id=1276911664 groups=["box"]]
 transform = Transform3D(-4.371139e-08, 0, 31.322617, 0, 2.8109741, 0, -1, 0, -1.369155e-06, -0.61056423, 0.90548706, 15.3708935)
@@ -118,11 +107,6 @@ mesh = SubResource("BoxMesh_sxovr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D3/StaticBody3D" unique_id=526781656 groups=["box"]]
 shape = SubResource("ConvexPolygonShape3D_5ukr8")
 
-[node name="Area3D" type="Area3D" parent="Objects/Walls/CSGBox3D3" unique_id=1286417354 groups=["box"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D3/Area3D" unique_id=1083882208]
-shape = SubResource("BoxShape3D_sxovr")
-
 [node name="CSGBox3D4" type="MeshInstance3D" parent="Objects/Walls" unique_id=1500113522 groups=["box"]]
 transform = Transform3D(1, 0, 0, 0, 2.8109741, 0, 0, 0, 31.322617, -15.403142, 0.90548706, -0.1180563)
 mesh = SubResource("BoxMesh_sxovr")
@@ -131,11 +115,6 @@ mesh = SubResource("BoxMesh_sxovr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D4/StaticBody3D" unique_id=1582530935 groups=["box"]]
 shape = SubResource("ConvexPolygonShape3D_o06y3")
-
-[node name="Area3D" type="Area3D" parent="Objects/Walls/CSGBox3D4" unique_id=189262829 groups=["box"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Walls/CSGBox3D4/Area3D" unique_id=1436925297]
-shape = SubResource("BoxShape3D_sxovr")
 
 [node name="Node3D" type="Node3D" parent="Objects" unique_id=396660445 groups=["box"]]
 
@@ -148,11 +127,6 @@ mesh = SubResource("BoxMesh_a02cp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Node3D/MeshInstance3D/StaticBody3D" unique_id=1358953090 groups=["box"]]
 shape = SubResource("ConvexPolygonShape3D_go701")
 
-[node name="Area3D" type="Area3D" parent="Objects/Node3D/MeshInstance3D" unique_id=413056965 groups=["box"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Node3D/MeshInstance3D/Area3D" unique_id=472210843]
-shape = SubResource("BoxShape3D_sxovr")
-
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Objects/Node3D" unique_id=182658277 groups=["box"]]
 transform = Transform3D(3, 0, 0, 0, 0.8000001, 0, 0, 0, 3, -3.304, 0.4, 4.003)
 mesh = SubResource("BoxMesh_tr3kr")
@@ -161,11 +135,6 @@ mesh = SubResource("BoxMesh_tr3kr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Node3D/MeshInstance3D2/StaticBody3D" unique_id=435838123 groups=["box"]]
 shape = SubResource("ConvexPolygonShape3D_5a7ea")
-
-[node name="Area3D" type="Area3D" parent="Objects/Node3D/MeshInstance3D2" unique_id=634392976 groups=["box"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Node3D/MeshInstance3D2/Area3D" unique_id=1110091686]
-shape = SubResource("BoxShape3D_sxovr")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Objects/Node3D" unique_id=1286490607 groups=["box"]]
 transform = Transform3D(3, 0, 0, 0, 1.25, 0, 0, 0, 3, 1.5, 0.55, 4)
@@ -176,10 +145,8 @@ mesh = SubResource("BoxMesh_1weqr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Node3D/MeshInstance3D3/StaticBody3D" unique_id=372531198 groups=["box"]]
 shape = SubResource("ConvexPolygonShape3D_8j60k")
 
-[node name="Area3D" type="Area3D" parent="Objects/Node3D/MeshInstance3D3" unique_id=202484473 groups=["box"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Node3D/MeshInstance3D3/Area3D" unique_id=1973807003]
-shape = SubResource("BoxShape3D_sxovr")
-
 [node name="Player" parent="." unique_id=538453111 instance=ExtResource("1_a02cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="PauseMenu" parent="." unique_id=1499866206 instance=ExtResource("2_go701")]
+visible = false
