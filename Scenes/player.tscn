@@ -21,8 +21,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5892082, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=495085067]
 
+[node name="rock_spawn" type="Node3D" parent="Head/Camera" unique_id=2141251429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41795182, -0.40187812, -0.6632272)
+
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=230105483]
 spot_range = 50.0
-
-[node name="rock_spawn" type="Marker3D" parent="." unique_id=873825336]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41795182, 0.18733007, -0.5)

@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://derly78kfllj8"]
-
-[ext_resource type="Script" uid="uid://b66630uxgwapi" path="res://Scripts/velocity_component.gd" id="1_gw0v7"]
-
-[node name="velocity_component" type="Node" unique_id=552888483]
-script = ExtResource("1_gw0v7")
-gravity = 10.0

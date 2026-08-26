@@ -23,8 +23,8 @@ var flashlight_position_smoothness := 15.0
 @onready var camera: Camera3D = $Head/Camera
 @onready var flashlight: SpotLight3D = $flashlight
 
-var bullet = load("res://Scenes/projectile.tscn")
-@onready var pos: Marker3D = $rock_spawn
+var bullet = load("res://Scenes/bullet.tscn")
+@onready var pos : Node3D = $Head/Camera/rock_spawn
 
 
 func _ready() -> void:
@@ -82,7 +82,7 @@ func _process(delta: float) -> void:
 	headbob_enab = Global.headbob_enab
 	
 	update_flashlight(delta)
-	update_rotations(delta)
+	#update_rotations(delta)
 	
 	if Input.is_action_just_pressed("f"):
 		flashlight.visible = !flashlight.visible
