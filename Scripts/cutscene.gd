@@ -6,6 +6,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	animation_player_2.play("thinking")
 	camera_3d.position = Vector3(9.016, 0.644, -12.26)
 
