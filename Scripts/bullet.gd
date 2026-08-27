@@ -15,6 +15,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		instance.position = global_position + Vector3(0.0, 0.0, 2.0)
 		instance.transform.basis = global_transform.basis
 		get_parent().add_child(instance)
-		
 		print("box entered")
 	queue_free()

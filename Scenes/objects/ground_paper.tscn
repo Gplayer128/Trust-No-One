@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cddugetjsrv84"]
+
+[ext_resource type="Script" uid="uid://dbo6lrpn7keth" path="res://Scripts/interactables.gd" id="1_abe8w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tr3kr"]
+size = Vector3(0.2, 0.3, 0.001)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0tr0f"]
+points = PackedVector3Array(0.10238095, 0.15238094, 0.0018809522, -0.10238095, -0.15238094, -0.0028809523, -0.10238095, -0.15238094, 0.0018809522, -0.10238095, 0.15238094, -0.0028809523, 0.10238095, -0.15238094, -0.0028809523, 0.10238095, -0.15238094, 0.0018809522, -0.10238095, 0.15238094, 0.0018809522, 0.10238095, 0.15238094, -0.0028809523)
+
+[node name="ground_paper" type="StaticBody3D" unique_id=421059368]
+script = ExtResource("1_abe8w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=145687818]
+mesh = SubResource("BoxMesh_tr3kr")
+
+[node name="Sprite3D" type="Label3D" parent="MeshInstance3D" unique_id=1887205429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0007080361)
+pixel_size = 0.0003
+text = "klklklklklkllklkkkkkkkkkk
+klkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkk
+kkkkk
+kkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=153511049]
+shape = SubResource("ConvexPolygonShape3D_0tr0f")

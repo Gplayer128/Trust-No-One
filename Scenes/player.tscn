@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdkjpupyadybg"]
 
 [ext_resource type="Script" uid="uid://pny63edxtd21" path="res://Scripts/Player.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://dj12ywhae0hrq" path="res://Scripts/player_interact.gd" id="2_cvnsp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sxovr"]
 
@@ -23,6 +24,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5892082, 0)
 
 [node name="rock_spawn" type="Node3D" parent="Head/Camera" unique_id=2141251429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41795182, -0.40187812, -0.6632272)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera" unique_id=390914111]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5107055)
+target_position = Vector3(0, -3, 0)
+script = ExtResource("2_cvnsp")
+
+[node name="Control" type="Control" parent="Head/Camera" unique_id=588481584]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Head/Camera/Control" unique_id=2064156715]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=230105483]
 light_energy = 0.5

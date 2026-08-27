@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cx3tn16buwrcd" path="res://Scenes/pause_menu.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://d3odmnaqybok7" path="res://Scenes/crosshair.tscn" id="3_8j60k"]
 [ext_resource type="Script" uid="uid://8k5tygyl7irk" path="res://Scripts/interact_handler.gd" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://cgiqdualeirqi" path="res://Scenes/Notes/First_W_note.tscn" id="7_o06y3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -244,5 +245,7 @@ stream = SubResource("AudioStreamMP3_8j60k")
 script = ExtResource("6_5ukr8")
 
 [node name="Notes" type="Node" parent="." unique_id=1860438777]
+
+[node name="First W note" parent="Notes" unique_id=128234549 instance=ExtResource("7_o06y3")]
 
 [connection signal="interacted" from="Objects/objects/ground_paper" to="interact_handler" method="_on_ground_paper_interacted"]
