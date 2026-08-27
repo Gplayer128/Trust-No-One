@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://bv8de04f378hf"]
 
 [ext_resource type="Script" uid="uid://c671hhip83yp0" path="res://Scripts/bullet.gd" id="1_xjght"]
+[ext_resource type="AudioStream" uid="uid://ckxxnvtaxcg5j" path="res://Assets/Audio/impactPlate_heavy_000.ogg" id="2_oduel"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sxovr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oduel"]
+albedo_color = Color(0.054573774, 0.054573774, 0.05457376, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_tr3kr"]
 
@@ -21,7 +25,11 @@ shape = SubResource("SphereShape3D_sxovr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=523959535]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_oduel")
 mesh = SubResource("SphereMesh_tr3kr")
+
+[node name="impact" type="AudioStreamPlayer3D" parent="." unique_id=716282734]
+stream = ExtResource("2_oduel")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

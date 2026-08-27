@@ -25,4 +25,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5892082, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41795182, -0.40187812, -0.6632272)
 
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=230105483]
-spot_range = 50.0
+light_energy = 0.5
+spot_range = 15.0
+
+[node name="bullet_cooldown" type="Timer" parent="." unique_id=894238292]
+
+[connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]

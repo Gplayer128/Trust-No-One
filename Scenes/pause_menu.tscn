@@ -52,16 +52,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "Resume"
 
-[node name="options" type="Button" parent="VBoxContainer" unique_id=1016015670]
-layout_mode = 2
-theme_override_font_sizes/font_size = 90
-text = "Options"
-
 [node name="quit" type="Button" parent="VBoxContainer" unique_id=864809786]
 layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

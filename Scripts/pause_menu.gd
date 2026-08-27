@@ -28,10 +28,6 @@ func _input(event: InputEvent) -> void:
 			visible = true
 			get_tree().paused = true
 
-func _on_options_pressed() -> void:
-	Global.options_from_game = true
-	get_tree().change_scene_to_file("res://Scenes/options.tscn")
-
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://cpo3v3mdov7b"]
+
+[ext_resource type="Script" uid="uid://dipenpkw54hd6" path="res://Scripts/cutscene.gd" id="1_wdfqq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o4d1m"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wdfqq"]
+sky_material = SubResource("ProceduralSkyMaterial_o4d1m")
+
+[sub_resource type="Environment" id="Environment_7lemd"]
+background_mode = 1
+sky = SubResource("Sky_wdfqq")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_1f2to"]
+size = Vector3(3.0429688, 5.777954, 0.23535156)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o337d"]
+points = PackedVector3Array(-1.5214844, -2.888977, -0.11767578, -1.5214844, -2.888977, 0.11767577, -1.5214844, 2.888977, -0.11767578, 1.5214844, -2.888977, -0.11767578, 1.5214844, -2.888977, 0.11767577, -1.5214844, 2.888977, 0.11767577, 1.5214844, 2.888977, -0.11767578, 1.5214844, 2.888977, 0.11767577)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ch7t"]
+size = Vector3(0.21496582, 2.8554459, 0.53432655)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pmh5m"]
+size = Vector3(0.21365356, 2.11232, 0.23835754)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sxovr"]
+size = Vector3(9.575966, 2.7807617, 0.80615234)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sxovr"]
+size = Vector2(20, 2)
+
+[sub_resource type="Animation" id="Animation_wdfqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8.49506, 0.643505, -12.265206)]
+}
+
+[sub_resource type="Animation" id="Animation_7lemd"]
+resource_name = "entering"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(9.015787, 0.643505, -12.265206), Vector3(5.682358, 0.6767814, -12.289758)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1f2to"]
+_data = {
+&"RESET": SubResource("Animation_wdfqq"),
+&"entering": SubResource("Animation_7lemd")
+}
+
+[sub_resource type="Animation" id="Animation_1f2to"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Label2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o337d"]
+resource_name = "thinking"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Label2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ch7t"]
+_data = {
+&"RESET": SubResource("Animation_1f2to"),
+&"thinking": SubResource("Animation_o337d")
+}
+
+[node name="cutscene" type="Node3D" unique_id=786852164]
+script = ExtResource("1_wdfqq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1440434291]
+environment = SubResource("Environment_7lemd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1109165584]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=952108250 groups=["box"]]
+transform = Transform3D(3, 0, 0, 0, 0.40000004, 0, 0, 0, 3, 10.256113, 1.1417117, -10.301156)
+mesh = SubResource("BoxMesh_1f2to")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1842233600]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1622027941]
+shape = SubResource("ConvexPolygonShape3D_o337d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=916264920 groups=["box"]]
+transform = Transform3D(3, 0, 0, 0, 0.8000001, 0, 0, 0, 3, 5.368995, 1.1450808, -10.73952)
+mesh = SubResource("BoxMesh_1ch7t")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=516999994 groups=["box"]]
+transform = Transform3D(3, 0, 0, 0, 0.8000001, 0, 0, 0, 3, 5.3567605, 1.1421785, -13.932309)
+mesh = SubResource("BoxMesh_1ch7t")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=382709197 groups=["box"]]
+transform = Transform3D(3, 0, 0, 0, -3.4969112e-08, -3, 0, 0.8000001, -1.3113416e-07, 5.3759727, 1.9238873, -12.30528)
+mesh = SubResource("BoxMesh_pmh5m")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=117363295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.841694, 0.89038086, -15.096924)
+mesh = SubResource("BoxMesh_sxovr")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=795182688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.9766116, 5.8215866, 0, -12.789827)
+mesh = SubResource("PlaneMesh_sxovr")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=761273325]
+transform = Transform3D(0.008610083, 0.1748267, 0.98456156, -0.0014239709, 0.98459923, -0.17482091, -0.9999619, 0.00010323555, 0.008726429, 8.49506, 0.643505, -12.265206)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=780388912]
+light_energy = 0.5
+spot_angle = 30.0
+
+[node name="Label" type="Label" parent="Camera3D" unique_id=2005828075]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.5
+offset_top = 92.0
+offset_right = 152.5
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "What is this?"
+
+[node name="Label2" type="Label" parent="Camera3D" unique_id=2123377118]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.5
+offset_top = 92.0
+offset_right = 234.5
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "I should investigate"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1246867124]
+libraries/ = SubResource("AnimationLibrary_1f2to")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=45808403]
+libraries/ = SubResource("AnimationLibrary_1ch7t")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]

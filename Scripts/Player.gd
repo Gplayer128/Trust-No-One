@@ -25,9 +25,12 @@ var flashlight_position_smoothness := 15.0
 
 var bullet = load("res://Scenes/bullet.tscn")
 @onready var pos : Node3D = $Head/Camera/rock_spawn
+@onready var bullet_cooldown: Timer = $bullet_cooldown
+var bullet_cooled : bool
 
 
 func _ready() -> void:
+	bullet_cooled = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -88,11 +91,14 @@ func _process(delta: float) -> void:
 		flashlight.visible = !flashlight.visible
 	
 	if Input.is_action_just_pressed("m1"):
-		var instance = bullet.instantiate()
-		instance.position = pos.global_position
-		instance.transform.basis = pos.global_transform.basis
-		get_parent().add_child(instance)
-		print("bullet_instanciated")
+		if bullet_cooled:
+			bullet_cooldown.start()
+			bullet_cooled = false
+			var instance = bullet.instantiate()
+			instance.position = pos.global_position
+			instance.transform.basis = pos.global_transform.basis
+			get_parent().add_child(instance)
+			print("bullet_instanciated")
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -110,3 +116,7 @@ func update_rotations(delta: float) -> void:
 	pos.global_transform.basis.slerp(camera.global_transform.basis, delta * 20),
 	pos.global_transform.origin.slerp(camera.global_transform.origin, delta * 20)
 )
+
+
+func _on_bullet_cooldown_timeout() -> void:
+	bullet_cooled = true

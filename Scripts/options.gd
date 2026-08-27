@@ -4,6 +4,7 @@ var from_game : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.headbob_enab = true
 	from_game = Global.options_from_game
 
 

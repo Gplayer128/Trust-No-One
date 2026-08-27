@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://botkhv2kqvrls"]
 
 [ext_resource type="Script" uid="uid://bnhqngk4frgy" path="res://Scripts/Ping_effect.gd" id="1_p4j6s"]
+[ext_resource type="AudioStream" uid="uid://ckxxnvtaxcg5j" path="res://Assets/Audio/impactPlate_heavy_000.ogg" id="2_kjrqi"]
 
 [node name="Ping_Effect" type="OmniLight3D" unique_id=1397454488]
+omni_range = 10.0
 script = ExtResource("1_p4j6s")
+
+[node name="Timer" type="Timer" parent="." unique_id=571838737]
+wait_time = 0.7
+
+[node name="impact" type="AudioStreamPlayer3D" parent="." unique_id=136364061]
+stream = ExtResource("2_kjrqi")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
