@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://18xexj4foop"]
+
+[ext_resource type="Script" uid="uid://k3e7woh507yo" path="res://Scripts/control.gd" id="1_sjmnu"]
+
+[node name="Control" type="Control" unique_id=1638441187]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sjmnu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1561796985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019925633, 0.019925632, 0.019925632, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1190453703]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.49994
+offset_top = -95.49997
+offset_right = 559.5
+offset_bottom = 177.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 200
+text = "You Died"
+
+[node name="Label2" type="Label" parent="." unique_id=1428869972]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -307.0
+offset_top = -69.0
+offset_right = 921.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 100
+text = "Remember: Trust No One"
+
+[node name="Timer" type="Timer" parent="." unique_id=1133694606]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

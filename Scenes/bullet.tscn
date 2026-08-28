@@ -10,25 +10,25 @@ albedo_color = Color(0.054573774, 0.054573774, 0.05457376, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_tr3kr"]
 
-[node name="Bullet" type="CharacterBody3D" unique_id=1118266488]
+[node name="Bullet" type="CharacterBody3D" unique_id=1118266488 groups=["bullet"]]
 script = ExtResource("1_xjght")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1696644835]
+[node name="Area3D" type="Area3D" parent="." unique_id=1696644835 groups=["bullet"]]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1525843384]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1525843384 groups=["bullet"]]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 shape = SubResource("SphereShape3D_sxovr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1002923673]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1002923673 groups=["bullet"]]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 shape = SubResource("SphereShape3D_sxovr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=523959535]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=523959535 groups=["bullet"]]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_oduel")
 mesh = SubResource("SphereMesh_tr3kr")
 
-[node name="impact" type="AudioStreamPlayer3D" parent="." unique_id=716282734]
+[node name="impact" type="AudioStreamPlayer3D" parent="." unique_id=716282734 groups=["bullet"]]
 stream = ExtResource("2_oduel")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

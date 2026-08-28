@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bn7ej7mnpecn5"]
+
+[ext_resource type="Material" uid="uid://bwy5d8iekexkp" path="res://Scenes/objects/new_standard_material_3d.tres" id="1_be3sa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7yui6"]
+size = Vector3(2.119751, 3, 0.25042725)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t2t4p"]
+points = PackedVector3Array(1.0630965, 1.2693442, 0.2857143, -1.0032113, -1.1786767, -0.25, -1.0797412, -1.2693442, 0.2857143, 1.0630965, -1.2693442, 0.2857143, -1.0797412, 1.2693442, 0.2857143, 0.98656654, 1.1786767, -0.25, 0.98656654, -1.1786767, -0.25, -1.0032113, 1.1786767, -0.25)
+
+[node name="door_start" type="MeshInstance3D" unique_id=387274511 groups=["box"]]
+transform = Transform3D(1, 0, -4.656613e-10, 0, 1, 0, 4.656613e-10, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_7yui6")
+surface_material_override/0 = ExtResource("1_be3sa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1686714925 groups=["box"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=14735446 groups=["box"]]
+shape = SubResource("ConvexPolygonShape3D_t2t4p")

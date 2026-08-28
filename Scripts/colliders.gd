@@ -1,0 +1,26 @@
+extends Node3D
+
+var door_start = load("res://Scenes/objects/door_start.tscn")
+var door_start_instance = door_start.instantiate()
+
+@onready var doors_node: Node3D = $"../Doors"
+
+
+func _on_after_start_body_exited(body: Node3D) -> void:
+	if not body.is_in_group("box") or not body.is_in_group("bullet"):
+		door_start_instance.position = Vector3(-1.13, 1.169, -10.1)
+		doors_node.add_child(door_start_instance)
+
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if not body.is_in_group("box") or not body.is_in_group("bullet"):
+		door_start_instance.scale = Vector3(1.2, 1.2, 1.2)
+		door_start_instance.position = Vector3(-1.13, 0.528, -6.25)
+
+
+func _on_area_3d_2_body_exited(body: Node3D) -> void:
+	if not body.is_in_group("box") or not body.is_in_group("bullet"):
+		door_start_instance.rotation = Vector3(0.0, 90.0, 0.0)
+		door_start_instance.scale = Vector3(1.15, 0.8, 1.0)
+		door_start_instance.position = Vector3(-2.35, 1.107, -5.01)
