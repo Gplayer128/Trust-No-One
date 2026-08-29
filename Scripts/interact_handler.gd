@@ -16,6 +16,12 @@ var fourth_w_note_i = fourth_w_note_p.instantiate()
 var fifth_w_note_p = load("res://Scenes/Notes/fifth_w_note.tscn")
 var fifth_w_note_i = fifth_w_note_p.instantiate()
 
+var sixth_w_note_p = load("res://Scenes/Notes/sixth_w_note.tscn")
+var sixth_w_note_i = sixth_w_note_p.instantiate()
+
+var seventh_w_note_p = load("res://Scenes/Notes/seventh_w_note.tscn")
+var seventh_w_note_i = seventh_w_note_p.instantiate()
+
 func _on_ground_paper_interacted() -> void:
 	get_parent().add_child(first_w_note_i)
 
@@ -34,3 +40,11 @@ func _on_ground_paper_5_interacted() -> void:
 
 func _on_ground_paper_6_interacted() -> void:
 	get_parent().add_child(fifth_w_note_i)
+
+
+func _on_ground_paper_7_interacted() -> void:
+	get_parent().add_child(sixth_w_note_i)
+
+
+func _on_ground_paper_8_interacted() -> void:
+	get_parent().add_child(seventh_w_note_i)

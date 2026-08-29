@@ -36,10 +36,14 @@ func _on_area_3d_3_body_exited(body: Node3D) -> void:
 
 func _on_area_3d_4_body_exited(body: Node3D) -> void:
 	if not body.is_in_group("box") or not body.is_in_group("bullet"):
-		doors_node.get_child(0).queue_free()
-		var door_start = load("res://Scenes/objects/door_start.tscn")
-		var door_start_instance = door_start.instantiate()
 		door_start_instance.rotation = Vector3.ONE
 		door_start_instance.scale = Vector3(1.71, 0.75, 1.1)
 		door_start_instance.position = Vector3(13.08, 1.132, -3.68)
 		get_parent().add_child(door_start_instance)
+
+
+func _on_area_3d_5_body_exited(body: Node3D) -> void:
+	if not body.is_in_group("box") or not body.is_in_group("bullet"):
+		door_start_instance.rotation = Vector3.ZERO
+		door_start_instance.scale = Vector3(2.1, 1.0, 1.2)
+		door_start_instance.position = Vector3(-7.42, 0.766, -1.2)

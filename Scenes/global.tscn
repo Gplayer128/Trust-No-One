@@ -4,5 +4,3 @@
 
 [node name="Global" type="Node" unique_id=154885164]
 script = ExtResource("1_koean")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1203675086]

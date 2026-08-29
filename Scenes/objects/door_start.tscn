@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://bwy5d8iekexkp" path="res://Scenes/objects/new_standard_material_3d.tres" id="1_be3sa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7yui6"]
-size = Vector3(2.119751, 3, 0.25042725)
+size = Vector3(2, 3, 0.25042725)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t2t4p"]
 points = PackedVector3Array(1.0630965, 1.2693442, 0.2857143, -1.0032113, -1.1786767, -0.25, -1.0797412, -1.2693442, 0.2857143, 1.0630965, -1.2693442, 0.2857143, -1.0797412, 1.2693442, 0.2857143, 0.98656654, 1.1786767, -0.25, 0.98656654, -1.1786767, -0.25, -1.0032113, 1.1786767, -0.25)
