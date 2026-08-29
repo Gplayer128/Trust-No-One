@@ -22,6 +22,9 @@ var sixth_w_note_i = sixth_w_note_p.instantiate()
 var seventh_w_note_p = load("res://Scenes/Notes/seventh_w_note.tscn")
 var seventh_w_note_i = seventh_w_note_p.instantiate()
 
+var eighth_w_note_p = load("res://eighth_w_note.tscn")
+var eighth_w_note_i = eighth_w_note_p.instantiate()
+
 func _on_ground_paper_interacted() -> void:
 	get_parent().add_child(first_w_note_i)
 
@@ -48,3 +51,7 @@ func _on_ground_paper_7_interacted() -> void:
 
 func _on_ground_paper_8_interacted() -> void:
 	get_parent().add_child(seventh_w_note_i)
+
+
+func _on_ground_paper_9_interacted() -> void:
+	get_parent().add_child(eighth_w_note_i)

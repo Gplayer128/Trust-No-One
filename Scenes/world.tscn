@@ -737,7 +737,7 @@ script = ExtResource("6_5ukr8")
 [connection signal="interacted" from="Objects/objects/ground_paper6" to="interact_handler" method="_on_ground_paper_6_interacted"]
 [connection signal="interacted" from="Objects/objects/ground_paper7" to="interact_handler" method="_on_ground_paper_7_interacted"]
 [connection signal="interacted" from="Objects/objects/ground_paper8" to="interact_handler" method="_on_ground_paper_8_interacted"]
-[connection signal="interacted" from="Objects/objects/ground_paper9" to="interact_handler" method="_on_ground_paper_8_interacted"]
+[connection signal="interacted" from="Objects/objects/ground_paper9" to="interact_handler" method="_on_ground_paper_9_interacted"]
 [connection signal="body_exited" from="Objects/colliders/after_start" to="Objects/colliders" method="_on_after_start_body_exited"]
 [connection signal="body_exited" from="Objects/colliders/Area3D" to="Objects/colliders" method="_on_area_3d_body_exited"]
 [connection signal="body_exited" from="Objects/colliders/Area3D2" to="Objects/colliders" method="_on_area_3d_2_body_exited"]

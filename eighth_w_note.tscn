@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://borvwvc6aes61"]
+
+[ext_resource type="Script" uid="uid://dw1naib2r3vcf" path="res://Scripts/first_w_note.gd" id="1_618ix"]
+
+[node name="eighth_W_note" type="Control" unique_id=128234549]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_618ix")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1970382620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4509804)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1222423211]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 670.0
+offset_top = 150.5
+offset_right = -670.0
+offset_bottom = -150.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0402688, 0.040268797, 0.040268827, 1)
+
+[node name="Label" type="Label" parent="ColorRect2" unique_id=113383545]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 51.5
+offset_right = 564.0
+offset_bottom = 421.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 50
+text = "No No
+
+Why you came this way I said 
+THE OTHER WAY.
+
+Why don't you listen to me now? huh?
+
+Turn around and turn left. 
+
+NOW."
+
+[node name="Timer" type="Timer" parent="." unique_id=1333058550]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
