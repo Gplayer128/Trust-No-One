@@ -4,6 +4,9 @@ var headbob_enab : bool = true
 var t_bob = 0.0
 var speed
 
+var mouse_motion := Vector2.ZERO
+var capture_mouse = false
+
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.5
@@ -120,3 +123,16 @@ func update_rotations(delta: float) -> void:
 
 func _on_bullet_cooldown_timeout() -> void:
 	bullet_cooled = true
+
+
+func _input(event: InputEvent) -> void:
+	#Allow escape to switch mouse modes to close window or interact with UI ap
+	if event is InputEventMouseButton:
+		if not capture_mouse:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			capture_mouse = true
+			Engine. time_scale = 1.0
+	if event.is_action_pressed("ui_cancel"):
+		if capture_mouse:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			capture_mouse = false
